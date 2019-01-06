@@ -1,0 +1,140 @@
+/* sidebar */
+
+#admin-sidebar {
+    display: block;
+    float: left;
+    width: 220px;
+}
+
+/* mobile phone */
+#admin-sidebar .mobile-phone {
+    display: none;
+}
+
+#admin-sidebar ul li {
+    display: block;
+    line-height: 20px;
+}
+
+#admin-sidebar > ul {
+    border-bottom: 1px solid #37414b;
+}
+
+#admin-sidebar > ul > li {
+    border-top: 1px solid #37414b;
+    border-bottom: 1px solid #1f262d;
+}
+
+#admin-sidebar > ul li a {
+    padding: 5px 0 5px 3px;
+    display: block;
+    color: #939da8;
+}
+
+#admin-sidebar > ul li.active {
+    background-color: #27a9e3;
+    border-bottom: 1px solid #27a9e3;
+    border-top: 1px solid #27a9e3;
+}
+
+#admin-sidebar > ul > li.active a {
+    background: url("../img/menu-active.png") no-repeat scroll right center transparent !important;
+    text-decoration: none;
+    color: #fff;
+}
+
+#admin-sidebar > ul li a:hover {
+    background-color: #27a9e3;
+    color: #fff;
+}
+
+#admin-sidebar ul li a i {
+    margin-right: 10px;
+}
+
+#admin-sidebar li a i {
+    opacity: .5;
+    margin-top: 2px;
+}
+
+#admin-sidebar .submenu ul {
+    background-color: #1e242b;
+}
+
+#admin-sidebar .submenu ul li {
+    border-top: 1px solid #37414b;
+}
+
+#admin-sidebar .submenu ul li.active a {
+    color: #fff;
+    background-color: #28b779;
+}
+
+#admin-sidebar .submenu ul li a:hover {
+    color: #fff;
+    background-color: #28b779;
+}
+
+#admin-sidebar .admin-sidebar-toggle {
+    border-color: #2295c9;
+}
+
+@media (min-width: 481px) and (max-width: 970px) {
+    #admin-sidebar {
+        width: 45px;
+    }
+
+    #admin-sidebar > ul li a {
+        padding-left: 6px;
+    }
+
+    #admin-sidebar ul li a span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    #admin-sidebar {
+        width: 100%;
+    }
+
+    #admin-sidebar > ul li a {
+        padding-left: 3px;
+    }
+
+    #admin-sidebar ul li a span {
+        display: inline-block;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    #admin-sidebar #admin-sidebar-menu {
+        display: none;
+    }
+
+    #admin-sidebar .mobile-phone {
+        display: block !important;
+        text-decoration: none;
+        padding: 8px 0 8px 3px;
+        color: #eeeeee;
+        float: none !important;
+        line-height: 20px;
+        font-weight: bold;
+        background: #27a9e3;
+    }
+}
+
+/* transitions */
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to {
+    transform: translateX(10px);
+    opacity: 0;
+}

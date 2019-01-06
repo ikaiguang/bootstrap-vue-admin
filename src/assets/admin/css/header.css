@@ -1,0 +1,24 @@
+/* header */
+
+#admin-header {
+    background: url("../../logo-admin.png") no-repeat #1f262d scroll;
+}
+
+#admin-header .admin-header-toggle {
+    border-color: #2295c9;
+}
+
+#admin-header .admin-header-logo {
+    padding-left: 185px;
+}
+
+#admin-header a:hover {
+    color: #eeeeee;
+    background: #666;
+}
+
+@media (max-width: 980px) {
+    #admin-header .admin-header-logo {
+        padding-left: 0;
+    }
+}

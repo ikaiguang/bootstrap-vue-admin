@@ -6,6 +6,7 @@
       <router-link to="/admin/login">Admin-Login</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+    <hr>
     <router-view/>
   </div>
 </template>
