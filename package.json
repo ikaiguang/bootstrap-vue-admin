@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
+    "jquery": "^1.12.4",
     "vue": "^2.5.21",
     "vue-router": "^3.0.2"
   },

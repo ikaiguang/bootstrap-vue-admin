@@ -98,7 +98,7 @@
                         <b-button @click="toLoginForm" type="button" variant="info">&laquo; 返回登陆</b-button>
                     </span>
                     <span class="pull-right">
-                        <b-button type="submit" variant="primary">恢复</b-button>
+                        <b-button type="submit" variant="primary">恢复密码</b-button>
                     </span>
                 </b-form-group>
             </b-form>
@@ -119,10 +119,10 @@
             return {
                 // 登陆表单
                 loginForm: {
-                    username: '',
-                    password: '',
-                    code: '',
-                    remember: [],
+                    username: 'user1',
+                    password: '12345',
+                    code: '4444',
+                    remember: ['true'],
                 },
                 // 恢复表单
                 recoverForm: {

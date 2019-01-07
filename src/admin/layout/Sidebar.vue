@@ -1,60 +1,63 @@
 <template>
     <div id="admin-sidebar">
 
-        <a href="#" class="mobile-phone">
+        <a href="#" @click="toggleAdminSidebarMenu" class="mobile-phone">
             <i class="fa fa-hand-o-right"></i>&nbsp;<span>菜单</span>
         </a>
 
-        <transition name="slide-fade">
-            <b-nav vertical id="admin-sidebar-menu">
+        <b-nav vertical id="admin-sidebar-menu">
 
-                <b-nav-item>
-                    <a href="#"><i class="fa fa-home"></i> <span>Dashboard</span></a>
-                </b-nav-item>
+            <b-nav-item>
+                <i class="fa fa-home"></i> <span>Dashboard</span>
+            </b-nav-item>
 
-                <b-nav-item class="active">
-                    <a href="#"><i class="fa fa-table"></i> <span>Table</span></a>
-                </b-nav-item>
+            <b-nav-item class="active">
+                <i class="fa fa-table"></i> <span>Table</span>
+            </b-nav-item>
 
-                <b-nav-item class="submenu">
-                    <a href="#"><i class="fa fa-android"></i> <span>Form</span></a>
-                    <b-nav vertical>
+            <b-nav-item class="submenu open">
+                <i class="fa fa-android"></i> <span>Form</span>
+                <b-nav vertical>
 
-                        <b-nav-item class="active">
-                            <a href="#"><i class="fa fa-table"></i> <span>Basic Form</span></a>
-                        </b-nav-item>
+                    <b-nav-item class="active">
+                        <i class="fa fa-table"></i> <span>Basic Form</span>
+                    </b-nav-item>
 
-                        <b-nav-item>
-                            <a href="#"><i class="fa fa-table"></i> <span>Form with Validation</span></a>
-                        </b-nav-item>
+                    <b-nav-item>
+                        <i class="fa fa-table"></i> <span>Form with Validation</span>
+                    </b-nav-item>
 
-                        <b-nav-item>
-                            <a href="#"><i class="fa fa-table"></i> <span>Form with Wizard</span></a>
-                        </b-nav-item>
+                    <b-nav-item>
+                        <i class="fa fa-table"></i> <span>Form with Wizard</span>
+                    </b-nav-item>
 
-                    </b-nav>
-                </b-nav-item>
+                </b-nav>
+            </b-nav-item>
 
-                <b-nav-item>
-                    <a href="#"><i class="fa fa-table"></i> <span>Widgets</span></a>
-                </b-nav-item>
+            <b-nav-item>
+                <i class="fa fa-table"></i> <span>Widgets</span>
+            </b-nav-item>
 
-            </b-nav>
-        </transition>
+        </b-nav>
     </div>
 </template>
 
 <script>
+    import sidebar from '../../assets/admin/js/sidebar.js'
+
     export default {
         data() {
-            return {
-            }
-        },
-        created() {
+            return {}
         },
         mounted() {
+            sidebar.toggleFunc()
         },
         methods: {
+            toggleAdminSidebarMenu: function (event) {
+                if (event) {
+                    window.console.log(event.target.tagName)
+                }
+            }
         }
     }
 </script>
