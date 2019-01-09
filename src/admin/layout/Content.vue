@@ -18,7 +18,7 @@
                 <b-col>
                     <div class="widget-box">
                         <div class="widget-title">
-                            <span class="icon"><i class="fa fa-amazon"></i></span>
+                            <span class="icon"><i class="fa fa-align-center"></i></span>
                             <h5>This a Title</h5>
                             <span class="label">
                                 <b-badge variant="success">4</b-badge>

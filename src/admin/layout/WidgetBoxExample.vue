@@ -1,25 +1,50 @@
 <template>
-    <b-row>
-        <b-col>
-            <div class="widget-box">
-                <div class="widget-title">
-                    <span class="icon"><i class="fa fa-arrows"></i></span>
-                    <h5>This a Titles</h5>
+    <b-container fluid>
+        <b-row>
+            <b-col>
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon"><i class="fa fa-arrows"></i></span>
+                        <h5>This a Title</h5>
+                    </div>
+                    <div class="widget-content">
+                        padding.
+                    </div>
                 </div>
-                <div class="widget-content no-padding">
-                    widget-content no-padding.
+            </b-col>
+        </b-row>
+        <b-row>
+            <b-col>
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon"><i class="fa fa-align-center"></i></span>
+                        <h5>This a Title</h5>
+                        <span class="label">
+                                <b-badge variant="success">4</b-badge>
+                                <b-badge pill variant="primary">Primary</b-badge>
+                            </span>
+                    </div>
+                    <div class="widget-content">
+                        padding.
+                    </div>
                 </div>
-            </div>
-        </b-col>
-    </b-row>
+            </b-col>
+            <b-col>
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon"><i class="fa fa-keyboard-o"></i></span>
+                        <h5>This a Title</h5>
+                        <span class="label">
+                                <b-link href="#"><b-badge variant="primary">Link1</b-badge></b-link>
+                                |
+                                <b-link href="#"><b-badge variant="success">Link2</b-badge></b-link>
+                            </span>
+                    </div>
+                    <div class="widget-content no-padding">
+                        no-padding.
+                    </div>
+                </div>
+            </b-col>
+        </b-row>
+    </b-container>
 </template>
-
-<script>
-    export default {
-        name: "WidgetBoxExample"
-    }
-</script>
-
-<style scoped>
-
-</style>

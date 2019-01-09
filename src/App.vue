@@ -10,12 +10,6 @@
             <router-link to="/about">About</router-link>
         </div>
         <hr>
-        <router-view/>
+        <router-view></router-view>
     </div>
 </template>
-
-<style>
-    #app {
-        height: 100%;
-    }
-</style>

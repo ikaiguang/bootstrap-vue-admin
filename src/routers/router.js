@@ -7,6 +7,8 @@ import AdminLogin from "../admin/Login.vue";
 Vue.use(Router);
 
 export default new Router({
+    // mode: 'history',
+    // base: __dirname,
     routes: [
         {
             path: "/",

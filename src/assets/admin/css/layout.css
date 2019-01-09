@@ -13,6 +13,11 @@ a {
 }
 
 /* layout */
+
+#app {
+    height: 100%;
+}
+
 #admin-layout {
     height: 100%;
 }
