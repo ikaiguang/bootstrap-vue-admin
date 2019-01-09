@@ -6,7 +6,7 @@ html, body {
 body {
     overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
-    background-color: #2E363F;
+    background-color: #2E363F !important;
     padding: 0;
 }
 

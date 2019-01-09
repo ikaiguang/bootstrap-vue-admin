@@ -12,8 +12,8 @@ import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue);
 
 // bootstrap-vue css
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 // vue config
 Vue.config.productionTip = false;

@@ -14,8 +14,6 @@
 
 
 <style>
-    @import '~bootstrap/dist/css/bootstrap.css';
-    @import '~bootstrap-vue/dist/bootstrap-vue.css';
     @import "../assets/admin/css/layout.css";
     @import "../assets/admin/css/header.css";
     @import "../assets/admin/css/sidebar.css";

@@ -34,19 +34,39 @@ Default: false
 
 npm i vue-router
 
-```bash
+## bootstrap
 
-git commit -m 'router example'
-
-```
+npm i bootstrap
 
 ## bootstrap-vue
 
 npm i bootstrap-vue
 
-```bash
+> Show components requiring JavaScript
 
-git commit -m 'install bootstrap-vue'
+```text
+
+Alerts for dismissing
+Buttons for toggling states and checkbox/radio functionality
+Carousel for all slide behaviors, controls, and indicators
+Collapse for toggling visibility of content
+Dropdowns for displaying and positioning (also requires Popper.js)
+Modals for displaying, positioning, and scroll behavior
+Navbar for extending our Collapse plugin to implement responsive behavior
+Tooltips and popovers for displaying and positioning (also requires Popper.js)
+Scrollspy for scroll behavior and navigation updates
 
 ```
+
+## jquery
+
+npm i jquery
+
+## popper.js
+
+npm i popper.js
+
+## babel-polyfill
+
+npm i babel-polyfill
 

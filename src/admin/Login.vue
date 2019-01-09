@@ -12,7 +12,7 @@
                 <b-form-group id="login-input-group-username"
                               horizontal
                               :label-cols="4"
-                              label="Username:"
+                              label='Username:'
                               label-for="login-input-username">
                     <b-form-input id="login-input-username"
                                   type="text"
@@ -98,7 +98,7 @@
                         <b-button @click="toLoginForm" type="button" variant="info">&laquo; 返回登陆</b-button>
                     </span>
                     <span class="pull-right">
-                        <b-button type="submit" variant="primary">恢复密码</b-button>
+                        <b-button type="submit" variant="primary">恢复</b-button>
                     </span>
                 </b-form-group>
             </b-form>
@@ -108,8 +108,6 @@
 </template>
 
 <style>
-    @import '~bootstrap/dist/css/bootstrap.css';
-    @import '~bootstrap-vue/dist/bootstrap-vue.css';
     @import "../assets/admin/css/login.css";
 </style>
 
@@ -119,10 +117,10 @@
             return {
                 // 登陆表单
                 loginForm: {
-                    username: 'user1',
-                    password: '12345',
-                    code: '4444',
-                    remember: ['true'],
+                    username: '',
+                    password: '',
+                    code: '',
+                    remember: [''],
                 },
                 // 恢复表单
                 recoverForm: {

@@ -3,17 +3,17 @@ html, body {
 }
 
 body {
-    background: #2E363F;
+    background: #2E363F !important;
     overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
 }
 
 /* common */
 .label-important {
-    padding: 0 2px;
+    padding: 0 0.3rem;
     margin-left: 4px;
     display: inline-block;
-    background: #f74d4d;
+    background: #007bff;
 }
 
 /* layout */

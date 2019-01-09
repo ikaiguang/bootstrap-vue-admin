@@ -1,41 +1,95 @@
 <template>
     <div id="admin-sidebar">
 
-        <a href="#" @click="toggleAdminSidebarMenu" class="mobile-phone">
-            <i class="fa fa-hand-o-right"></i>&nbsp;<span>菜单</span>
-        </a>
+        <div class="mobile-phone">
+            <a href="#">
+                <i class="fa fa-hand-o-right"></i>&nbsp;<span>当前菜单</span>
+            </a>
+            <div class="mobile-message">
+                <i class="fa fa-envelope-o"></i>
+            </div>
+        </div>
 
-        <b-nav vertical id="admin-sidebar-menu">
+        <b-nav vertical>
 
             <b-nav-item>
-                <i class="fa fa-home"></i> <span>Dashboard</span>
+                <i class="fa fa-home"></i><span>Dashboard</span>
             </b-nav-item>
 
             <b-nav-item class="active">
-                <i class="fa fa-table"></i> <span>Table</span>
+                <i class="fa fa-table"></i><span>Table</span>
             </b-nav-item>
 
-            <b-nav-item class="submenu open">
-                <i class="fa fa-android"></i> <span>Form</span>
+            <b-nav-text tag="li" class="submenu">
+
+                <a href="#"><i class="fa fa-address-book-o"></i><span>二级菜单</span></a>
+
                 <b-nav vertical>
 
                     <b-nav-item class="active">
-                        <i class="fa fa-table"></i> <span>Basic Form</span>
+                        <i class="fa fa-table"></i><span>二级菜单1</span>
                     </b-nav-item>
 
                     <b-nav-item>
-                        <i class="fa fa-table"></i> <span>Form with Validation</span>
+                        <i class="fa fa-table"></i><span>二级菜单2</span>
+                    </b-nav-item>
+
+                    <b-nav-text tag="li" class="submenu">
+
+                        <a href="#"><i class="fa fa-adjust"></i><span>三级菜单</span></a>
+
+                        <b-nav vertical>
+
+                            <b-nav-item class="active">
+                                <i class="fa fa-table"></i><span>三级菜单1</span>
+                            </b-nav-item>
+
+                            <b-nav-item>
+                                <i class="fa fa-table"></i><span>三级菜单2</span>
+                            </b-nav-item>
+
+                        </b-nav>
+                    </b-nav-text>
+
+                    <b-nav-text tag="li" class="submenu">
+
+                        <a href="#"><i class="fa fa-adjust"></i><span>三级菜单</span></a>
+
+                        <b-nav vertical>
+
+                            <b-nav-item class="active">
+                                <i class="fa fa-table"></i><span>三级菜单1</span>
+                            </b-nav-item>
+
+                            <b-nav-item>
+                                <i class="fa fa-table"></i><span>三级菜单2</span>
+                            </b-nav-item>
+
+                        </b-nav>
+                    </b-nav-text>
+
+                </b-nav>
+            </b-nav-text>
+
+            <b-nav-text tag="li" class="submenu">
+
+                <a href="#"><i class="fa fa-address-book-o"></i><span>二级菜单</span></a>
+
+                <b-nav vertical>
+
+                    <b-nav-item class="active">
+                        <i class="fa fa-table"></i><span>二级菜单1</span>
                     </b-nav-item>
 
                     <b-nav-item>
-                        <i class="fa fa-table"></i> <span>Form with Wizard</span>
+                        <i class="fa fa-table"></i><span>二级菜单2</span>
                     </b-nav-item>
 
                 </b-nav>
-            </b-nav-item>
+            </b-nav-text>
 
             <b-nav-item>
-                <i class="fa fa-table"></i> <span>Widgets</span>
+                <i class="fa fa-table"></i><span>Widgets</span>
             </b-nav-item>
 
         </b-nav>
@@ -43,21 +97,15 @@
 </template>
 
 <script>
-    import sidebar from '../../assets/admin/js/sidebar.js'
+    import sidebar from '../../assets/admin/js/sidebar'
 
     export default {
         data() {
             return {}
         },
         mounted() {
-            sidebar.toggleFunc()
+            sidebar.menuFeatures()
         },
-        methods: {
-            toggleAdminSidebarMenu: function (event) {
-                if (event) {
-                    window.console.log(event.target.tagName)
-                }
-            }
-        }
+        methods: {}
     }
 </script>

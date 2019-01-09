@@ -7,13 +7,45 @@
 }
 
 /* mobile phone */
+
 #admin-sidebar .mobile-phone {
+    width: 100%;
+    border-top: 1px solid #37414b;
+    border-bottom: 1px solid #1f262d;
+    padding: 8px 0 8px 15px;
+    background: #2E363F !important;
     display: none;
 }
+
+#admin-sidebar .mobile-phone > a {
+    color: #939da8;
+    line-height: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#admin-sidebar .mobile-message {
+    margin-right: 2rem;
+    padding: 0 0.2rem;
+    float: right;
+    background-color: #f74d4d;
+}
+
+#admin-sidebar.open > ul {
+    display: block;
+}
+
+/* menu */
 
 #admin-sidebar ul li {
     display: block;
     line-height: 20px;
+}
+
+#admin-sidebar ul li a i {
+    margin-right: 10px;
+    opacity: .5;
+    margin-top: 2px;
 }
 
 #admin-sidebar > ul {
@@ -25,8 +57,8 @@
     border-bottom: 1px solid #1f262d;
 }
 
-#admin-sidebar > ul > li a {
-    padding: 5px 0 5px 3px;
+#admin-sidebar > ul > li > a {
+    padding: 10px 0 10px 15px;
     display: block;
     color: #939da8;
 }
@@ -37,7 +69,7 @@
     border-top: 1px solid #27a9e3;
 }
 
-#admin-sidebar > ul > li.active a {
+#admin-sidebar > ul > li.active > a {
     background: url("../img/menu-active.png") no-repeat scroll right center transparent !important;
     text-decoration: none;
     color: #fff;
@@ -48,10 +80,16 @@
     color: #fff;
 }
 
-#admin-sidebar ul li a i {
-    margin-right: 10px;
-    opacity: .5;
-    margin-top: 2px;
+#admin-sidebar .submenu {
+    padding: 0;
+}
+
+#admin-sidebar .submenu > ul {
+    display: none;
+}
+
+#admin-sidebar .submenu.open > ul {
+    display: block;
 }
 
 #admin-sidebar .submenu ul {
@@ -73,21 +111,9 @@
     background-color: #28b779;
 }
 
-#admin-sidebar .submenu ul {
-    display: none;
-}
-
-#admin-sidebar .open ul {
-    display: block;
-}
-
 @media (min-width: 481px) and (max-width: 970px) {
     #admin-sidebar {
         width: 45px;
-    }
-
-    #admin-sidebar > ul li a {
-        padding-left: 6px;
     }
 
     #admin-sidebar ul li a span {
@@ -100,8 +126,8 @@
         width: 100%;
     }
 
-    #admin-sidebar > ul li a {
-        padding-left: 3px;
+    #admin-sidebar > ul {
+        display: none;
     }
 
     #admin-sidebar ul li a span {
@@ -110,19 +136,8 @@
         font-weight: bold;
     }
 
-    #admin-sidebar #admin-sidebar-menu {
-        display: none;
-    }
-
     #admin-sidebar .mobile-phone {
         display: block !important;
-        text-decoration: none;
-        padding: 8px 0 8px 3px;
-        color: #eeeeee;
-        float: none !important;
-        line-height: 20px;
-        font-weight: bold;
-        background: #27a9e3;
     }
 }
 
