@@ -28,8 +28,8 @@
                     <b-nav-item-dropdown right>
                         <!-- Using button-content slot -->
                         <template slot="button-content">
-                            <em><i class="fa fa-envelope fa-fw"></i>站内消息</em>
-                            <span class="label-important">5</span>
+                            <em><i class="fa fa-envelope fa-fw"></i>站内消息&nbsp;</em>
+                            <b-badge variant="primary">3</b-badge>
                         </template>
                         <b-dropdown-item href="#"><i class="fa fa-send-o fa-fw"></i>发送消息</b-dropdown-item>
                         <b-dropdown-divider></b-dropdown-divider>
@@ -46,7 +46,7 @@
                 <b-navbar-nav class="ml-auto">
 
                     <b-nav-form>
-                        <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="查找"/>
+                        <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
                         <b-button variant="primary" size="sm" class="my-2 my-sm-0" type="submit">
                             <i class="fa fa-search"></i>
                         </b-button>
@@ -58,3 +58,7 @@
         </b-navbar>
     </div>
 </template>
+
+<style>
+    @import "../../assets/admin/css/header.css";
+</style>

@@ -6,7 +6,7 @@
                 <i class="fa fa-hand-o-right"></i>&nbsp;<span>当前菜单</span>
             </a>
             <div class="mobile-message">
-                <i class="fa fa-envelope-o"></i>
+                <b-badge variant="primary"><i class="fa fa-envelope-o"></i>&nbsp;14</b-badge>
             </div>
         </div>
 
@@ -16,7 +16,7 @@
                 <i class="fa fa-home"></i><span>Dashboard</span>
             </b-nav-item>
 
-            <b-nav-item class="active">
+            <b-nav-item>
                 <i class="fa fa-table"></i><span>Table</span>
             </b-nav-item>
 
@@ -26,7 +26,7 @@
 
                 <b-nav vertical>
 
-                    <b-nav-item class="active">
+                    <b-nav-item>
                         <i class="fa fa-table"></i><span>二级菜单1</span>
                     </b-nav-item>
 
@@ -40,7 +40,7 @@
 
                         <b-nav vertical>
 
-                            <b-nav-item class="active">
+                            <b-nav-item>
                                 <i class="fa fa-table"></i><span>三级菜单1</span>
                             </b-nav-item>
 
@@ -57,7 +57,7 @@
 
                         <b-nav vertical>
 
-                            <b-nav-item class="active">
+                            <b-nav-item>
                                 <i class="fa fa-table"></i><span>三级菜单1</span>
                             </b-nav-item>
 
@@ -77,7 +77,7 @@
 
                 <b-nav vertical>
 
-                    <b-nav-item class="active">
+                    <b-nav-item>
                         <i class="fa fa-table"></i><span>二级菜单1</span>
                     </b-nav-item>
 
@@ -95,6 +95,10 @@
         </b-nav>
     </div>
 </template>
+
+<style>
+    @import "../../assets/admin/css/sidebar.css";
+</style>
 
 <script>
     import sidebar from '../../assets/admin/js/sidebar'

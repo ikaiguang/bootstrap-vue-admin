@@ -9,12 +9,11 @@
 }
 
 #admin-header .admin-header-logo {
-    padding-left: 185px;
+    padding-left: 200px;
 }
 
-#admin-header a:hover {
-    color: #eeeeee;
-    background: #666;
+#admin-header .admin-header-logo a:hover {
+    background-color: transparent !important;
 }
 
 @media (max-width: 980px) {

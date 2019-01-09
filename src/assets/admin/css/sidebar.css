@@ -26,9 +26,7 @@
 
 #admin-sidebar .mobile-message {
     margin-right: 2rem;
-    padding: 0 0.2rem;
     float: right;
-    background-color: #f74d4d;
 }
 
 #admin-sidebar.open > ul {
