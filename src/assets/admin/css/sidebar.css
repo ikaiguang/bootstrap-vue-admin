@@ -58,7 +58,7 @@
 }
 
 #admin-sidebar > ul > li > a {
-    padding: 10px 0 10px 15px;
+    padding: 0.5rem 0 0.5rem 0.8rem;
     display: block;
     color: #939da8;
 }
@@ -100,15 +100,51 @@
     border-top: 1px solid #37414b;
 }
 
-#admin-sidebar .submenu ul li.active a {
+#admin-sidebar .submenu ul li > a {
+    color: #939da8;
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+#admin-sidebar .submenu ul li.active > a {
     color: #fff;
-    /*background-color: #28b779;*/
     background: #28b779;
 }
 
 #admin-sidebar .submenu ul li a:hover {
     color: #fff;
     background-color: #28b779;
+}
+
+#admin-sidebar .submenu .submenu {
+    background-color: #3f4954;
+}
+
+#admin-sidebar .submenu .submenu ul li {
+    background-color: #37414b;
+}
+
+#admin-sidebar .submenu .submenu > a {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+#admin-sidebar .submenu .submenu ul li > a {
+    padding-left: 20px;
+}
+
+#admin-sidebar .submenu .submenu ul li > a {
+    color: #fcfcfc;
+}
+
+#admin-sidebar .submenu .submenu ul li.active a {
+    color: #fff;
+    background: #2255a4;
+}
+
+#admin-sidebar .submenu .submenu ul li a:hover {
+    color: #fff;
+    background-color: #2255a4;
 }
 
 @media (min-width: 481px) and (max-width: 970px) {

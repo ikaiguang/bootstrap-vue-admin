@@ -36,7 +36,7 @@
 
                     <b-nav-text tag="li" class="submenu">
 
-                        <a href="#"><i class="fa fa-adjust"></i><span>三级菜单</span></a>
+                        <a href="#"><i class="fa fa-adjust"></i><span>菜单三级</span></a>
 
                         <b-nav vertical>
 
@@ -53,7 +53,7 @@
 
                     <b-nav-text tag="li" class="submenu">
 
-                        <a href="#"><i class="fa fa-adjust"></i><span>三级菜单</span></a>
+                        <a href="#"><i class="fa fa-adjust"></i><span>菜单三级</span></a>
 
                         <b-nav vertical>
 
