@@ -4,6 +4,7 @@
     display: block;
     float: left;
     width: 220px;
+    background: #2E363F !important;
 }
 
 /* mobile phone */
@@ -15,6 +16,7 @@
     padding: 8px 0 8px 15px;
     background: #2E363F !important;
     display: none;
+    overflow: hidden !important;
 }
 
 #admin-sidebar .mobile-phone > a {
@@ -158,6 +160,7 @@
 @media (max-width: 480px) {
     #admin-sidebar {
         width: 100%;
+        float: none;
     }
 
     #admin-sidebar > ul {
@@ -172,6 +175,7 @@
 
     #admin-sidebar .mobile-phone {
         display: block !important;
+        overflow: hidden !important;
     }
 }
 

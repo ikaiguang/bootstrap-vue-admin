@@ -57,6 +57,16 @@
     padding: 0 !important;
 }
 
+@media (max-width: 970px) {
+    .widget-title {
+        overflow: hidden !important;
+    }
+
+    .widget-title .label {
+        float: left;
+    }
+}
+
 @media (min-width: 481px) and (max-width: 970px) {
     #admin-content {
         margin-left: 45px;

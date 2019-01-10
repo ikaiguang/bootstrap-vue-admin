@@ -4,7 +4,7 @@ import $ from 'jquery'
 // 菜单栏
 const sidebarNode = "#admin-sidebar";
 // 小屏菜单
-const mobilePhoneANode = sidebarNode + " .mobile-phone > a";
+const mobilePhoneANode = sidebarNode + " .mobile-phone > a:first-child";
 // 菜单节点
 const menuNode = sidebarNode + " > ul";
 // 菜单点击
@@ -33,11 +33,28 @@ const sidebarMenuFeatures = {
         // 选中菜单
         this.chooseMenu();
     },
+    // 响应式 小屏幕点击
+    mobilePhone: function () {
+        $(mobilePhoneANode).click(function (e) {
+            // 阻止跳转
+            e.preventDefault();
+            // 菜单节点
+            let sidebarDom = $(sidebarNode);
+            // 显示 || 关闭 菜单
+            if (sidebarDom.hasClass(showMenuClassName)) {
+                sidebarDom.removeClass(showMenuClassName);
+            } else {
+                sidebarDom.addClass(showMenuClassName);
+            }
+        });
+    },
     // 选中菜单
     chooseMenu: function () {
         $(menuANode).click(function () {
+            // 当前标签
+            let curDom = $(this);
             // 当前菜单
-            let liDom = $(this).closest('li');
+            let liDom = curDom.closest('li');
             // 多级菜单
             if (liDom.hasClass(submenuClassName)) {
                 return
@@ -48,11 +65,29 @@ const sidebarMenuFeatures = {
             $(menuNode).find("li").removeClass(chooseMenuClassName);
             // 选中当前菜单
             liDom.addClass(chooseMenuClassName);
+            // 小屏幕按键显示
+            // 上级菜单的 a 标签内容
+            let fatherAHtml = [];
             // 选中当前父菜单
             let fatherSubmenuDom = liDom.closest(submenuNodeName);
             while (fatherSubmenuDom.length > 0) {
+                // 上级菜单的 a 标签内容
+                fatherAHtml.push(fatherSubmenuDom.children("a:first-child").html());
+                // 选中父菜单
                 fatherSubmenuDom.addClass(chooseMenuClassName);
+                // 查找上级父菜单
                 fatherSubmenuDom = fatherSubmenuDom.closest('ul').closest(submenuNodeName)
+            }
+            // 修改小屏幕按键显示
+            let mobilePhoneInnerHtml = curDom.html();
+            if (fatherAHtml.length > 0) {
+                mobilePhoneInnerHtml = fatherAHtml.reverse().join("/") + "/" + mobilePhoneInnerHtml
+            }
+            $(mobilePhoneANode).html(mobilePhoneInnerHtml);
+            // 小屏幕选中后关闭菜单
+            if ($(window).width() <= 480) {
+                window.console.log(fatherAHtml.reverse().join(" / "))
+                $(sidebarNode).removeClass(showMenuClassName);
             }
         })
     },
@@ -72,21 +107,6 @@ const sidebarMenuFeatures = {
                 submenuLiDom.removeClass(showMenuClassName);
             } else {
                 submenuLiDom.addClass(showMenuClassName);
-            }
-        });
-    },
-    // 响应式 小屏幕点击
-    mobilePhone: function () {
-        $(mobilePhoneANode).click(function (e) {
-            // 阻止跳转
-            e.preventDefault();
-            // 菜单节点
-            let sidebarDom = $(sidebarNode);
-            // 显示 || 关闭 菜单
-            if (sidebarDom.hasClass(showMenuClassName)) {
-                sidebarDom.removeClass(showMenuClassName);
-            } else {
-                sidebarDom.addClass(showMenuClassName);
             }
         });
     }

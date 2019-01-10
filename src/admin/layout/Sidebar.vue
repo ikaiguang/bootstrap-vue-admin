@@ -6,7 +6,7 @@
                 <i class="fa fa-hand-o-right"></i>&nbsp;<span>当前菜单</span>
             </a>
             <div class="mobile-message">
-                <b-badge variant="primary"><i class="fa fa-envelope-o"></i>&nbsp;14</b-badge>
+                <b-badge variant="primary"><i class="fa fa-envelope-o"></i>&nbsp;5</b-badge>
             </div>
         </div>
 

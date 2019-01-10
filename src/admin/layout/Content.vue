@@ -7,6 +7,11 @@
                         <div class="widget-title">
                             <span class="icon"><i class="fa fa-arrows"></i></span>
                             <h5>This a Title</h5>
+                            <span class="label">
+                                <b-badge variant="success">4</b-badge>
+                                |
+                                <b-link href="#"><b-badge variant="primary">Link1</b-badge></b-link>
+                            </span>
                         </div>
                         <div class="widget-content">
                             padding.
@@ -22,6 +27,7 @@
                             <h5>This a Title</h5>
                             <span class="label">
                                 <b-badge variant="success">4</b-badge>
+                                |
                                 <b-badge pill variant="primary">Primary</b-badge>
                             </span>
                         </div>
