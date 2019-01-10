@@ -12,7 +12,7 @@
 
         <b-nav vertical>
 
-            <b-nav-item>
+            <b-nav-item class="active">
                 <i class="fa fa-home"></i><span>Dashboard</span>
             </b-nav-item>
 
@@ -27,25 +27,25 @@
                 <b-nav vertical>
 
                     <b-nav-item>
-                        <i class="fa fa-table"></i><span>二级菜单1</span>
+                        <i class="fa fa-warning"></i><span>Warning</span>
                     </b-nav-item>
 
                     <b-nav-item>
-                        <i class="fa fa-table"></i><span>二级菜单2</span>
+                        <i class="fa fa-adn"></i><span>Adn</span>
                     </b-nav-item>
 
                     <b-nav-text tag="li" class="submenu">
 
-                        <a href="#"><i class="fa fa-adjust"></i><span>菜单三级</span></a>
+                        <a href="#"><i class="fa fa-search-plus"></i><span>三级菜单</span></a>
 
                         <b-nav vertical>
 
                             <b-nav-item>
-                                <i class="fa fa-table"></i><span>三级菜单1</span>
+                                <i class="fa fa-key"></i><span>Key</span>
                             </b-nav-item>
 
                             <b-nav-item>
-                                <i class="fa fa-table"></i><span>三级菜单2</span>
+                                <i class="fa fa-keyboard-o"></i><span>Keyboard</span>
                             </b-nav-item>
 
                         </b-nav>
@@ -53,16 +53,16 @@
 
                     <b-nav-text tag="li" class="submenu">
 
-                        <a href="#"><i class="fa fa-adjust"></i><span>菜单三级</span></a>
+                        <a href="#"><i class="fa fa-amazon"></i><span>另一三级</span></a>
 
                         <b-nav vertical>
 
                             <b-nav-item>
-                                <i class="fa fa-table"></i><span>三级菜单1</span>
+                                <i class="fa fa-magic"></i><span>Magic</span>
                             </b-nav-item>
 
                             <b-nav-item>
-                                <i class="fa fa-table"></i><span>三级菜单2</span>
+                                <i class="fa fa-mail-forward"></i><span>Mail</span>
                             </b-nav-item>
 
                         </b-nav>
@@ -73,23 +73,23 @@
 
             <b-nav-text tag="li" class="submenu">
 
-                <a href="#"><i class="fa fa-address-book-o"></i><span>二级菜单</span></a>
+                <a href="#"><i class="fa fa-align-right"></i><span>另一二级</span></a>
 
                 <b-nav vertical>
 
                     <b-nav-item>
-                        <i class="fa fa-table"></i><span>二级菜单1</span>
+                        <i class="fa fa-qrcode"></i><span>Qrcode</span>
                     </b-nav-item>
 
                     <b-nav-item>
-                        <i class="fa fa-table"></i><span>二级菜单2</span>
+                        <i class="fa fa-qq"></i><span>QQ</span>
                     </b-nav-item>
 
                 </b-nav>
             </b-nav-text>
 
             <b-nav-item>
-                <i class="fa fa-table"></i><span>Widgets</span>
+                <i class="fa fa-wechat"></i><span>Wechat</span>
             </b-nav-item>
 
         </b-nav>

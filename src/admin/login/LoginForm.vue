@@ -50,8 +50,17 @@
         </b-form-group>
 
         <!-- 错误提示 -->
-        <b-alert variant="warning" :show="errorMessage.length > 0" dismissible>
-            <i class="fa fa-warning"></i>&nbsp;{{ errorMessage }}
+        <b-alert :show="loginFormErrorAlert.dismissCountDown"
+                 dismissible
+                 variant="warning"
+                 @dismissed="loginFormErrorAlert.dismissCountDown=0"
+                 @dismiss-count-down="countDownChanged">
+            <p><i class="fa fa-warning"></i>{{ loginFormErrorAlert.errorMessage }}</p>
+            <b-progress variant="warning"
+                        :max="loginFormErrorAlert.dismissSecs"
+                        :value="loginFormErrorAlert.dismissCountDown"
+                        height="2px">
+            </b-progress>
         </b-alert>
 
         <b-form-group class="form-actions">
@@ -86,7 +95,11 @@
                     remember: [''],
                 },
                 // 错误提示
-                errorMessage: "",
+                loginFormErrorAlert: {
+                    dismissSecs: 3,
+                    dismissCountDown: 0,
+                    errorMessage: "",
+                },
             }
         },
         methods: {
@@ -96,11 +109,16 @@
                 // alert(JSON.stringify(this.loginFormData));
                 auth.login(this.loginFormData.username, this.loginFormData.password, loggedIn => {
                     if (!loggedIn) {
-                        this.errorMessage = "登陆失败"
+                        this.loginFormErrorAlert.dismissCountDown = 3;
+                        this.loginFormErrorAlert.errorMessage = "登陆失败"
                     } else {
                         this.$router.replace(this.$route.query.redirect || '/')
                     }
                 })
+            },
+            // 自动关闭alert
+            countDownChanged(dismissCountDown) {
+                this.loginFormErrorAlert.dismissCountDown = dismissCountDown
             }
         }
     }

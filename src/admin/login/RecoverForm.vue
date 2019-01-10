@@ -19,8 +19,17 @@
         </b-form-group>
 
         <!-- 错误提示 -->
-        <b-alert variant="warning" :show="errorMessage.length > 0" dismissible>
-            <i class="fa fa-warning"></i>&nbsp;{{ errorMessage }}
+        <b-alert :show="recoverFormErrorAlert.dismissCountDown"
+                 dismissible
+                 variant="warning"
+                 @dismissed="recoverFormErrorAlert.dismissCountDown=0"
+                 @dismiss-count-down="countDownChanged">
+            <p><i class="fa fa-warning"></i>{{ recoverFormErrorAlert.errorMessage }}</p>
+            <b-progress variant="warning"
+                        :max="recoverFormErrorAlert.dismissSecs"
+                        :value="recoverFormErrorAlert.dismissCountDown"
+                        height="2px">
+            </b-progress>
         </b-alert>
 
         <b-form-group class="form-actions">
@@ -49,7 +58,11 @@
                     email: '',
                 },
                 // 错误提示
-                errorMessage: "",
+                recoverFormErrorAlert: {
+                    dismissSecs: 3,
+                    dismissCountDown: 0,
+                    errorMessage: "",
+                },
             }
         },
         methods: {
@@ -57,6 +70,10 @@
             onSubmitRecover(evt) {
                 evt.preventDefault();
                 alert(JSON.stringify(this.recoverFormData));
+            },
+            // 自动关闭alert
+            countDownChanged(dismissCountDown) {
+                this.recoverFormErrorAlert.dismissCountDown = dismissCountDown
             }
         }
     }
