@@ -1,38 +1,60 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "../views/Home.vue";
+
+// admin
+import auth from '../admin/login/auth'
 import AdminIndex from "../admin/Index.vue";
 import AdminLogin from "../admin/Login.vue";
 
 Vue.use(Router);
 
-export default new Router({
-    // mode: 'history',
+// 管理员登陆路径
+const adminLoginPath = "/admin/login";
+const adminLogoutPath = "/admin/logout";
+
+// 登陆验证
+function requireAdminAuth(to, from, next) {
+    if (!auth.loggedIn()) {
+        next({
+            path: adminLoginPath,
+            query: {redirect: to.fullPath}
+        })
+    } else {
+        next()
+    }
+}
+
+const router = new Router({
+    // mode: 'history', // 开启 history 模式，记得配置 http 服务改写规则
     // base: __dirname,
     routes: [
         {
-            path: "/",
-            name: "home",
-            component: Home
-        },
-        {
-            path: "/admin",
-            name: "admin",
-            component: AdminIndex
-        },
-        {
-            path: "/admin/login",
+            path: adminLoginPath,
             name: "admin-login",
             component: AdminLogin
         },
         {
-            path: "/about",
-            name: "about",
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () =>
-                import(/* webpackChunkName: "about" */ "../views/About.vue")
+            path: adminLogoutPath,
+            name: "admin-logout",
+            beforeEnter(to, from, next) {
+                auth.logout();
+                next(adminLoginPath)
+            }
+        },
+        {
+            path: "/",
+            name: "home",
+            component: AdminIndex,
+            beforeEnter: requireAdminAuth
+        },
+        {
+            path: "/admin",
+            name: "admin",
+            component: AdminIndex,
+            beforeEnter: requireAdminAuth
         }
     ]
 });
+
+// 输出路由
+export default router

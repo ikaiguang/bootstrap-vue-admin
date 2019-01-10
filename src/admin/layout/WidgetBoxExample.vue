@@ -1,6 +1,8 @@
 <template>
     <b-container fluid>
+
         <b-row>
+            <!-- padding -->
             <b-col>
                 <div class="widget-box">
                     <div class="widget-title">
@@ -13,7 +15,10 @@
                 </div>
             </b-col>
         </b-row>
+
+
         <b-row>
+            <!-- padding -->
             <b-col>
                 <div class="widget-box">
                     <div class="widget-title">
@@ -29,6 +34,8 @@
                     </div>
                 </div>
             </b-col>
+
+            <!-- no-padding -->
             <b-col>
                 <div class="widget-box">
                     <div class="widget-title">

@@ -10,34 +10,52 @@ body {
     padding: 0;
 }
 
-#logo, #login-box {
+/* login */
+
+#login-box {
     width: 32%;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
+    overflow: hidden !important;
 }
 
-#logo img {
+#login-box .login-box-logo {
+    margin-top: 10px;
+    border-top: 1px solid #3f4954;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    background: #2E363F;
+    color: #fff;
+}
+
+#login-box .login-box-logo img {
     margin: 0 auto;
     display: block;
 }
 
-#login-box {
-    overflow: hidden !important;
-    text-align: left;
-    position: relative;
+#login-box form {
+    border-top: 1px solid #3f4954;
+    padding-top: 10px;
+    display: block;
+    width: 100%;
 }
 
-#login-box form {
-    width: 100%;
+#login-box form label {
+    color: #939da8;
+}
+
+#login-box .normal_text {
+    text-align: center;
+    font-size: 15px;
+    line-height: 20px;
     background: #2E363F;
-    position: relative;
-    top: 0;
-    left: 0;
+    color: #fff;
 }
 
 #login-box .form-actions {
-    padding: 14px 20px 15px;
+    border-top: 1px solid #3f4954;
+    padding: 10px 0 0;
 }
 
 #login-box .form-actions.pull-left {
@@ -46,39 +64,6 @@ body {
 
 #login-box .form-actions .pull-right {
     float: right;
-}
-
-#login-box label {
-    color: #939da8;
-}
-
-#login-box form#login-form {
-    z-index: 200;
-    display: block;
-}
-
-#login-box form#recover-form {
-    z-index: 200;
-    display: block;
-}
-
-#login-box form#recover-form .form-actions {
-    margin-top: 10px;
-}
-
-.form-vertical, .form-actions {
-    margin-bottom: 0;
-    background: none;
-    border-top: 1px solid #3f4954;
-}
-
-#login-box .normal_text {
-    padding: 15px 10px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 20px;
-    background: #2E363F;
-    color: #fff;
 }
 
 @media (max-width: 800px) {
