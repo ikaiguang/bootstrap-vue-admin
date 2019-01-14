@@ -73,13 +73,20 @@ export default {
 // @param cb 回调函数
 function pretendRequest(email, pass, cb) {
     setTimeout(() => {
-        if (email === 'ikaiguang@github.com' && pass === 'password') {
-            cb({
-                authenticated: true,
-                token: Math.random().toString(36).substring(7)
-            })
-        } else {
-            cb({authenticated: false})
+            // 直接登陆
+            let authenticated = true;
+
+            // if (email === 'ikaiguang@github.com' && pass === 'password') {
+            if (authenticated) {
+                cb({
+                    authenticated: true,
+                    token: Math.random().toString(36).substring(7)
+                })
+            } else {
+                cb({authenticated: false})
+            }
         }
-    }, 0)
+        ,
+        0
+    )
 }

@@ -9,6 +9,8 @@
     width: auto;
 }
 
+/* widget-box */
+
 .widget-box {
     background: none repeat scroll 0 0 #F9F9F9;
     border-left: 1px solid #CDCDCD;
@@ -55,6 +57,15 @@
 
 .no-padding {
     padding: 0 !important;
+}
+
+/* table */
+
+table th {
+    /*background: #efefef;*/
+    /*border-right: 1px solid #ccc;*/
+    background: #e0e0e0;
+    border: 1px solid #ccc !important;
 }
 
 @media (max-width: 970px) {

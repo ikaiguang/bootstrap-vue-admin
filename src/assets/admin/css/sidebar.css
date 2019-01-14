@@ -55,6 +55,8 @@
 #admin-sidebar > ul > li {
     border-top: 1px solid #37414b;
     border-bottom: 1px solid #1f262d;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #admin-sidebar > ul > li > a {
@@ -147,15 +149,15 @@
 /* icon padding*/
 
 #admin-sidebar > ul > li > a {
-    padding: 0.5rem 0 0.5rem 0.2rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
 }
 
 #admin-sidebar .submenu ul li > a {
-    padding: 0.5rem 0 0.5rem 0.7rem;
+    padding: 0.5rem 0 0.5rem 1rem;
 }
 
 #admin-sidebar .submenu .submenu ul li > a {
-    padding: 0.5rem 0 0.5rem 1.2rem;
+    padding: 0.5rem 0 0.5rem 1.5rem;
 }
 
 @media (min-width: 481px) and (max-width: 970px) {

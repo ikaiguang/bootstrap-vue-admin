@@ -1,57 +1,40 @@
+// vue
 import Vue from "vue";
 import Router from "vue-router";
 
-// admin
-import auth from '../admin/login/auth'
-import AdminIndex from "../admin/Index.vue";
-import AdminLogin from "../admin/Login.vue";
-
+// 使用路由
 Vue.use(Router);
 
-// 管理员登陆路径
-const adminLoginPath = "/admin/login";
-const adminLogoutPath = "/admin/logout";
-
-// 登陆验证
-function requireAdminAuth(to, from, next) {
-    if (!auth.loggedIn()) {
-        next({
-            path: adminLoginPath,
-            query: {redirect: to.fullPath}
-        })
-    } else {
-        next()
-    }
-}
+// 登陆退出
+import {adminLoginRouter, adminLogoutRouter, requireAdminAuth} from './admin/login'
+// 管理后台
+import {adminLayout, adminDashboardRouter, adminChildrenRouter} from "./admin/index";
+// 网站前台 暂无前台。先用后台顶替
+const webLayout = adminLayout;
+const webDashboardRouter = adminDashboardRouter;
 
 const router = new Router({
     // mode: 'history', // 开启 history 模式，记得配置 http 服务改写规则
     // base: __dirname,
     routes: [
+        adminLoginRouter, // 管理员登陆
+        adminLogoutRouter,// 管理员注销
         {
-            path: adminLoginPath,
-            name: "admin-login",
-            component: AdminLogin
-        },
-        {
-            path: adminLogoutPath,
-            name: "admin-logout",
-            beforeEnter(to, from, next) {
-                auth.logout();
-                next(adminLoginPath)
-            }
-        },
-        {
-            path: "/",
+            // 网站前台
+            path: "/", // web
             name: "home",
-            component: AdminIndex,
+            component: webLayout.component,
+            redirect: webDashboardRouter,
             beforeEnter: requireAdminAuth
         },
         {
-            path: "/admin",
-            name: "admin",
-            component: AdminIndex,
-            beforeEnter: requireAdminAuth
+            // 管理后台
+            path: adminLayout.path,
+            name: adminLayout.name,
+            component: adminLayout.component,
+            redirect: adminDashboardRouter,
+            beforeEnter: requireAdminAuth,
+            children: adminChildrenRouter,
         }
     ]
 });

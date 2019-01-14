@@ -28,7 +28,7 @@
 
     export default {
         // 模板
-        components: {RecoverForm, LoginForm},
+        components: {LoginForm, RecoverForm},
         // 数据
         data() {
             return {

@@ -37,7 +37,12 @@
                     </b-nav-item-dropdown>
 
                     <b-nav-item href="#" disabled><i class="fa fa-cog fa-spin"></i>系统设置</b-nav-item>
-                    <b-nav-item href="#/admin/logout"><i class="fa fa-sign-out fa-fw"></i>退出登陆</b-nav-item>
+
+                    <b-nav-text tag="li">
+                        <router-link to="/admin/logout">
+                            <i class="fa fa-sign-out fa-fw"></i>退出登陆
+                        </router-link>
+                    </b-nav-text>
 
                 </b-navbar-nav>
 

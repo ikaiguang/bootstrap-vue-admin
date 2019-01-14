@@ -16,6 +16,14 @@
     background-color: transparent !important;
 }
 
+#admin-header ul li a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#admin-header ul li .disabled {
+    color: rgba(255, 255, 255, 0.25);
+}
+
 @media (max-width: 980px) {
     #admin-header .admin-header-logo {
         padding-left: 0;

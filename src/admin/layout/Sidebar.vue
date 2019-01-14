@@ -12,13 +12,17 @@
 
         <b-nav vertical>
 
-            <b-nav-item class="active">
-                <i class="fa fa-home"></i><span>Dashboard</span>
-            </b-nav-item>
+            <b-nav-text tag="li" :class="{active:this.$route.path==='/admin/dashboard'}">
+                <router-link to="/admin/dashboard">
+                    <i class="fa fa-home"></i><span>Dashboard</span>
+                </router-link>
+            </b-nav-text>
 
-            <b-nav-item>
-                <i class="fa fa-table"></i><span>Table</span>
-            </b-nav-item>
+            <b-nav-text tag="li" :class="{active:this.$route.path==='/admin/table'}">
+                <router-link to="/admin/table">
+                    <i class="fa fa-table"></i><span>Table</span>
+                </router-link>
+            </b-nav-text>
 
             <b-nav-text tag="li" class="submenu">
 
@@ -27,11 +31,11 @@
                 <b-nav vertical>
 
                     <b-nav-item>
-                        <i class="fa fa-warning"></i><span>Warning</span>
+                        <i class="fa fa-wechat"></i><span>微信</span>
                     </b-nav-item>
 
                     <b-nav-item>
-                        <i class="fa fa-adn"></i><span>Adn</span>
+                        <i class="fa fa-weibo"></i><span>微博</span>
                     </b-nav-item>
 
                     <b-nav-text tag="li" class="submenu">
