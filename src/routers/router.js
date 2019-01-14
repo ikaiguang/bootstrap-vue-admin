@@ -8,7 +8,7 @@ Vue.use(Router);
 // 登陆退出
 import {adminLoginRouter, adminLogoutRouter, requireAdminAuth} from './admin/login'
 // 管理后台
-import {adminLayout, adminDashboardRouter, adminChildrenRouter} from "./admin/index";
+import {adminLayout, adminDashboardRouter, adminChildrenRouter} from "./admin/layout";
 // 网站前台 暂无前台。先用后台顶替
 const webLayout = adminLayout;
 const webDashboardRouter = adminDashboardRouter;
