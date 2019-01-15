@@ -51,7 +51,7 @@ Password : password
 
 > login
 
-![login.png](/public/readme/login.png)
+![login.png](public/readme/login.png)
 
 > index
 
@@ -68,6 +68,10 @@ Password : password
 > mobile-phone
 
 ![mobile-phone.png](public/readme/mobile-phone.png)
+
+> icon
+
+![mobile-phone.png](public/readme/icon.png)
 
 ## License
 

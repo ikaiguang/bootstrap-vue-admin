@@ -29,7 +29,7 @@
                         <li><i class="icon-zoom-out"></i> icon-zoom-out</li>
                         <li><i class="icon-off"></i> icon-off</li>
                         <li><i class="icon-signal"></i> icon-signal</li>
-                        <li><i class="icon-cog"></i> icon-cog</li>
+                        <li><i class="icon-cog fa-spin"></i> icon-cog</li>
                         <li><i class="icon-trash"></i> icon-trash</li>
                         <li><i class="icon-home"></i> icon-home</li>
                         <li><i class="icon-file"></i> icon-file</li>
@@ -40,7 +40,7 @@
                         <li><i class="icon-upload"></i> icon-upload</li>
                         <li><i class="icon-inbox"></i> icon-inbox</li>
                         <li><i class="icon-play-circle"></i> icon-play-circle</li>
-                        <li><i class="icon-repeat"></i> icon-repeat</li>
+                        <li><i class="icon-repeat fa-spin"></i> icon-repeat</li>
                         <li><i class="icon-refresh"></i> icon-refresh</li>
                         <li><i class="icon-list-alt"></i> icon-list-alt</li>
                         <li><i class="icon-lock"></i> icon-lock</li>
