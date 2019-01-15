@@ -16,7 +16,7 @@
     background-color: transparent !important;
 }
 
-#admin-header ul li a {
+#admin-header ul li > a {
     color: rgba(255, 255, 255, 0.5);
 }
 

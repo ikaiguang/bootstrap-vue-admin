@@ -17,7 +17,6 @@
 
 
 <style>
-    @import "../assets/font-awesome/css/font-awesome.min.css";
     @import "../assets/admin/css/layout.css";
 </style>
 

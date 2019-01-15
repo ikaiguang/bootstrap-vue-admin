@@ -19,6 +19,11 @@ const children = [
         name: "admin-table",
         component: () => import(/* webpackChunkName: "admin-table" */ './../../admin/table/Example.vue'),
     },
+    {
+        path: "/admin/icon",
+        name: "admin-icon",
+        component: () => import(/* webpackChunkName: "admin-icon" */ './../../admin/icon/Example.vue'),
+    },
 ];
 
 // export

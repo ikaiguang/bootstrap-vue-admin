@@ -18,6 +18,12 @@
                 </router-link>
             </b-nav-text>
 
+            <b-nav-text tag="li" :class="{active:this.$route.path==='/admin/icon'}">
+                <router-link to="/admin/icon">
+                    <i class="fa fa-id-card"></i><span>Icon</span>
+                </router-link>
+            </b-nav-text>
+
             <b-nav-text tag="li" :class="{active:this.$route.path==='/admin/table'}">
                 <router-link to="/admin/table">
                     <i class="fa fa-table"></i><span>Table</span>
