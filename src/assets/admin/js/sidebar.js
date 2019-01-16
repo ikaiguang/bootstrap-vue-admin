@@ -1,10 +1,14 @@
 import $ from 'jquery'
 
+// 内容节点
+const contentNode = "#admin-content";
 // 菜单节点
 // 菜单栏
 const sidebarNode = "#admin-sidebar";
 // 小屏菜单
 const mobilePhoneANode = sidebarNode + " .mobile-phone > a:first-child";
+// 迷你菜单
+const miniMenuANode = sidebarNode + " .mini-menu > a:first-child";
 // 菜单节点
 const menuNode = sidebarNode + " > ul";
 // 菜单点击
@@ -22,12 +26,16 @@ const submenuANode = submenuNode + " > a";
 const showMenuClassName = "open";
 // 选中菜单
 const chooseMenuClassName = "active";
+// 正常菜单
+const normalMenuClassName = "normal-menu";
 
 // 菜单功能
 const sidebarMenuFeatures = {
     menuFeatures: function () {
         // 响应式 小屏幕点击
         this.mobilePhone();
+        // 迷你菜单
+        this.miniMenu();
         // 及联菜单
         this.associatedMenu();
         // 选中菜单
@@ -48,9 +56,31 @@ const sidebarMenuFeatures = {
             }
         });
     },
+    // 迷你菜单
+    miniMenu: function () {
+        // 点击时间
+        $(miniMenuANode).click(function (e) {
+            // 阻止跳转
+            e.preventDefault();
+            // 菜单节点
+            let sidebarDom = $(sidebarNode);
+
+            if (sidebarDom.hasClass(normalMenuClassName)){
+                // 小菜单
+                sidebarDom.removeClass(normalMenuClassName);
+                $(contentNode).removeClass(normalMenuClassName);
+            } else {
+                // 完整菜单
+                sidebarDom.addClass(normalMenuClassName);
+                $(contentNode).addClass(normalMenuClassName);
+            }
+        });
+    },
     // 选中菜单
     chooseMenu: function () {
         $(menuANode).click(function () {
+            // 菜单栏
+            let sidebarDom = $(sidebarNode);
             // 当前标签
             let curDom = $(this);
             // 当前菜单
@@ -86,8 +116,13 @@ const sidebarMenuFeatures = {
             $(mobilePhoneANode).html(mobilePhoneInnerHtml);
             // 小屏幕选中后关闭菜单
             if ($(window).width() <= 480) {
-                window.console.log(fatherAHtml.reverse().join(" / "))
-                $(sidebarNode).removeClass(showMenuClassName);
+                sidebarDom.removeClass(showMenuClassName);
+            }
+            // 小菜单
+            if (sidebarDom.hasClass(normalMenuClassName)){
+                // 小菜单
+                sidebarDom.removeClass(normalMenuClassName);
+                $(contentNode).removeClass(normalMenuClassName);
             }
         })
     },

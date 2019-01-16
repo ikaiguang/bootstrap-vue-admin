@@ -12,6 +12,12 @@
     padding-left: 200px;
 }
 
+#admin-header .admin-header-logo img {
+    height: 25px;
+    width: 25px;
+    border-radius: 500rem;
+}
+
 #admin-header .admin-header-logo a:hover {
     background-color: transparent !important;
 }

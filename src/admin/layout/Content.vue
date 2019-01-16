@@ -5,7 +5,3 @@
         </b-container>
     </div>
 </template>
-
-<style>
-    @import "../../assets/admin/css/content.css";
-</style>

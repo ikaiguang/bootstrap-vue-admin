@@ -17,7 +17,12 @@
 
 
 <style>
-    @import "../assets/admin/css/layout.css";
+    @import "./../assets/admin/css/layout.css";
+    @import "./../assets/admin/css/header.css";
+    @import "./../assets/admin/css/sidebar.css";
+    @import "./../assets/admin/css/content.css";
+    @import "./../assets/admin/css/footer.css";
+    @import "./../assets/admin/css/icon.css";
 </style>
 
 <script>

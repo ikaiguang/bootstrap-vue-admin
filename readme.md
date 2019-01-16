@@ -49,10 +49,6 @@ Password : password
 
 ## images
 
-> login
-
-![login.png](public/readme/login.png)
-
 > index
 
 ![index.png](public/readme/index.png)
@@ -61,17 +57,25 @@ Password : password
 
 ![index2.png](public/readme/index2.png)
 
-> response
-
-![response.png](public/readme/response.png)
-
 > mobile-phone
 
 ![mobile-phone.png](public/readme/mobile-phone.png)
 
 > icon
 
-![mobile-phone.png](public/readme/icon.png)
+![icon.png](public/readme/icon.png)
+
+> response
+
+![response.png](public/readme/response.png)
+
+> response2
+
+![response2.png](public/readme/response2.png)
+
+> login
+
+![login.png](public/readme/login.png)
 
 ## License
 

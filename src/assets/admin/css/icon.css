@@ -4,7 +4,7 @@
     display: inline-block;
     width: 14px;
     height: 14px;
-    margin-top: 3px;
+    margin-top: 2px;
     *margin-right: .3em;
     line-height: 14px;
     vertical-align: text-top;
@@ -13,21 +13,60 @@
     background-repeat: no-repeat
 }
 
-.icon-white,
-.nav-pills > .active > a > [class^="icon-"],
-.nav-pills > .active > a > [class*=" icon-"],
-.nav-list > .active > a > [class^="icon-"],
-.nav-list > .active > a > [class*=" icon-"],
-.navbar-inverse .nav > .active > a > [class^="icon-"],
-.navbar-inverse .nav > .active > a > [class*=" icon-"],
-.dropdown-menu > li > a:hover > [class^="icon-"],
-.dropdown-menu > li > a:hover > [class*=" icon-"],
-.dropdown-menu > .active > a > [class^="icon-"],
-.dropdown-menu > .active > a > [class*=" icon-"],
-.dropdown-submenu:hover > a > [class^="icon-"],
-.dropdown-submenu:hover > a > [class*=" icon-"] {
+/* icon margin */
+
+.badge > [class^="icon-"], .badge > [class*=" icon-"] {
+    margin-top: 0;
+}
+
+.btn > [class^="icon-"], .btn > [class*=" icon-"] {
+    margin-top: 3px;
+}
+
+.btn-sm > [class^="icon-"], .btn-sm > [class*=" icon-"] {
+    margin-top: 3px;
+}
+
+.btn-lg > [class^="icon-"], .btn-lg > [class*=" icon-"] {
+    margin-top: 6px;
+}
+
+/* icon hover */
+
+a:hover > [class^="icon-"], a:hover > [class*=" icon-"] {
     background-image: url("../img/glyphicons-halflings-white.png")
 }
+
+/* icon animation */
+
+.icon-spin {
+    -webkit-animation: icon-spin 2s infinite linear;
+    animation: icon-spin 2s infinite linear;
+}
+
+@-webkit-keyframes icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+/* icon position */
 
 .icon-glass {
     background-position: 0 0
@@ -589,19 +628,4 @@
 
 .icon-fullscreen {
     background-position: -456px -144px
-}
-
-/* button icon */
-.btn-large [class^="icon-"], .btn-large [class*=" icon-"] {
-    margin-top: 2px
-}
-
-.btn-small [class^="icon-"], .btn-small [class*=" icon-"] {
-    margin-top: 0
-}
-
-/* nav */
-
-.nav-list [class^="icon-"], .nav-list [class*=" icon-"] {
-    margin-right: 2px
 }

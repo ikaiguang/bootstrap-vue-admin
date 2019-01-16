@@ -82,6 +82,10 @@ table th {
     #admin-content {
         margin-left: 45px;
     }
+
+    #admin-content.normal-menu {
+        margin-left: 220px;
+    }
 }
 
 @media (max-width: 480px) {

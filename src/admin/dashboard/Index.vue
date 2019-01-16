@@ -4,7 +4,7 @@
             <b-col>
                 <div class="widget-box">
                     <div class="widget-title">
-                        <span class="icon"><i class="fa fa-arrows"></i></span>
+                        <span class="icon"><i class="icon icon-glass"></i></span>
                         <h5>This a Title</h5>
                         <span class="label">
                             <b-badge variant="success">4</b-badge>
@@ -22,7 +22,7 @@
             <b-col>
                 <div class="widget-box">
                     <div class="widget-title">
-                        <span class="icon"><i class="fa fa-align-center"></i></span>
+                        <span class="icon"><i class="icon icon-fullscreen"></i></span>
                         <h5>This a Title</h5>
                         <span class="label">
                             <b-badge variant="success">4</b-badge>
@@ -38,7 +38,7 @@
             <b-col>
                 <div class="widget-box">
                     <div class="widget-title">
-                        <span class="icon"><i class="fa fa-keyboard-o"></i></span>
+                        <span class="icon"><i class="icon-comment"></i></span>
                         <h5>This a Title</h5>
                         <span class="label">
                             <b-link href="#"><b-badge variant="primary">Link1</b-badge></b-link>

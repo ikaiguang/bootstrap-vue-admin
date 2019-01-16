@@ -3,7 +3,7 @@
         <b-col>
             <div class="widget-box">
                 <div class="widget-title">
-                    <span class="icon"><i class="fa fa-table"></i></span>
+                    <span class="icon"><i class="icon icon-tasks"></i></span>
                     <h5>Table Example</h5>
                     <span class="label">
                         <b-link href="#"><b-badge variant="primary">Link1</b-badge></b-link>

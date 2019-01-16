@@ -24,7 +24,7 @@
                  variant="warning"
                  @dismissed="recoverFormErrorAlert.dismissCountDown=0"
                  @dismiss-count-down="countDownChanged">
-            <p><i class="fa fa-warning"></i>{{ recoverFormErrorAlert.errorMessage }}</p>
+            <p>{{ recoverFormErrorAlert.errorMessage }}</p>
             <b-progress variant="warning"
                         :max="recoverFormErrorAlert.dismissSecs"
                         :value="recoverFormErrorAlert.dismissCountDown"

@@ -55,7 +55,7 @@
                  variant="warning"
                  @dismissed="loginFormErrorAlert.dismissCountDown=0"
                  @dismiss-count-down="countDownChanged">
-            <p><i class="fa fa-warning"></i>{{ loginFormErrorAlert.errorMessage }}</p>
+            <p>{{ loginFormErrorAlert.errorMessage }}</p>
             <b-progress variant="warning"
                         :max="loginFormErrorAlert.dismissSecs"
                         :value="loginFormErrorAlert.dismissCountDown"
@@ -89,8 +89,8 @@
             return {
                 // 登陆表单
                 loginFormData: {
-                    username: '',
-                    password: '',
+                    username: 'ikaiguang@github.com',
+                    password: 'password',
                     code: '',
                     remember: [''],
                 },
