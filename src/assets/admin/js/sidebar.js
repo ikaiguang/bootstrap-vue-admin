@@ -1,27 +1,18 @@
-import $ from 'jquery'
-
-// 内容节点
-const contentNode = "#admin-content";
-// 菜单节点
-// 菜单栏
-const sidebarNode = "#admin-sidebar";
 // 小屏菜单
-const mobilePhoneANode = sidebarNode + " .mobile-phone > a:first-child";
-// 迷你菜单
-const miniMenuANode = sidebarNode + " .mini-menu > a:first-child";
-// 菜单节点
-const menuNode = sidebarNode + " > ul";
-// 菜单点击
-const menuANode = menuNode + " li > a";
-// 及联菜单类名
+const mobilePhoneClassName = "mobile-phone";
+// 小屏菜单
+const miniMenuClassName = "mini-menu";
+// 菜单栏id
+const sidebarIDName = "admin-sidebar";
+// 菜单
+const menuIDName = "admin-sidebar-menu";
+// 子菜单class
 const submenuClassName = "submenu";
-const submenuNodeName = "." + submenuClassName;
-// 及联菜单 节点
-const submenuNode = menuNode + " li" + submenuNodeName;
-// 及联菜单 点击
-const submenuANode = submenuNode + " > a";
+// 菜单列表tag
+const menuListTagName = "li";
+// 内容节点
+const contentIDName = "admin-content";
 
-// 菜单选中效果
 // 显示菜单
 const showMenuClassName = "open";
 // 选中菜单
@@ -29,123 +20,219 @@ const chooseMenuClassName = "active";
 // 正常菜单
 const normalMenuClassName = "normal-menu";
 
-// 菜单功能
-const sidebarMenuFeatures = {
-    menuFeatures: function () {
-        // 响应式 小屏幕点击
-        this.mobilePhone();
-        // 迷你菜单
-        this.miniMenu();
-        // 及联菜单
-        this.associatedMenu();
-        // 选中菜单
-        this.chooseMenu();
-    },
-    // 响应式 小屏幕点击
-    mobilePhone: function () {
-        $(mobilePhoneANode).click(function (e) {
-            // 阻止跳转
-            e.preventDefault();
-            // 菜单节点
-            let sidebarDom = $(sidebarNode);
-            // 显示 || 关闭 菜单
-            if (sidebarDom.hasClass(showMenuClassName)) {
-                sidebarDom.removeClass(showMenuClassName);
-            } else {
-                sidebarDom.addClass(showMenuClassName);
-            }
-        });
-    },
-    // 迷你菜单
-    miniMenu: function () {
-        // 点击时间
-        $(miniMenuANode).click(function (e) {
-            // 阻止跳转
-            e.preventDefault();
-            // 菜单节点
-            let sidebarDom = $(sidebarNode);
+// 隐藏同级子菜单
+function removeMenuOpen(liDom) {
+    // li兄弟
+    let liBrotherDom = liDom.parentNode.children;
+    // 隐藏子菜单
+    for (let i = 0; i < liBrotherDom.length; i++) {
+        // 跳过当前点击节点
+        if (liBrotherDom[i] === liDom) {
+            continue
+        }
+        // 隐藏子菜单
+        liBrotherDom[i].classList.remove(showMenuClassName);
+    }
+}
 
-            if (sidebarDom.hasClass(normalMenuClassName)){
-                // 小菜单
-                sidebarDom.removeClass(normalMenuClassName);
-                $(contentNode).removeClass(normalMenuClassName);
-            } else {
-                // 完整菜单
-                sidebarDom.addClass(normalMenuClassName);
-                $(contentNode).addClass(normalMenuClassName);
+// 移除菜单选中效果
+function removeMenuChoose(menuDom, originLiDom) {
+    // 菜单li节点
+    let menuLiDom = menuDom.getElementsByTagName(menuListTagName);
+    // 移除选中效果
+    for (let i = 0; i < menuLiDom.length; i++) {
+        // 跳过当前点击节点
+        if (menuLiDom[i] === originLiDom) {
+            continue
+        }
+        // 移除选中效果
+        menuLiDom[i].classList.remove(chooseMenuClassName);
+    }
+}
+
+// 添加父菜单选中效果
+function addMenuParentChoose(liDom) {
+    // 如果点击的是子菜单，获取父节点菜单的 a 标签的html(用处：小屏幕按键显示)
+    let parentADomHTML = [];
+    // 父节点
+    let parentDom = liDom.parentNode;
+    // 一级一级的到菜单节点
+    while (parentDom.id !== menuIDName) {
+        // 父节点是li
+        if (parentDom.matches(menuListTagName)) {
+            // 菜单选中效果
+            parentDom.classList.add(chooseMenuClassName);
+            // 如未展开菜单
+            if (!parentDom.classList.contains(showMenuClassName)) {
+                // 展开菜单
+                parentDom.classList.add(showMenuClassName)
             }
-        });
-    },
-    // 选中菜单
-    chooseMenu: function () {
-        $(menuANode).click(function () {
-            // 菜单栏
-            let sidebarDom = $(sidebarNode);
-            // 当前标签
-            let curDom = $(this);
-            // 当前菜单
-            let liDom = curDom.closest('li');
-            // 多级菜单
-            if (liDom.hasClass(submenuClassName)) {
+            // 获取父节点菜单的 a 标签的html
+            parentADomHTML.push(parentDom.getElementsByTagName("a")[0].innerHTML);
+        }
+        parentDom = parentDom.parentNode;
+    }
+    return parentADomHTML
+}
+
+// 刷新页面后，菜单选中
+function refreshMenu(domCollection) {
+    let activeLiDom;
+    // 菜单li节点
+    let menuLiDom = domCollection.menu.getElementsByTagName(menuListTagName)
+    // 移除选中效果
+    for (let i = 0; i < menuLiDom.length; i++) {
+        if (menuLiDom[i].classList.contains(chooseMenuClassName)) {
+            activeLiDom = menuLiDom[i];
+            break;
+        }
+    }
+    // 添加父菜单选中效果
+    addMenuParentChoose(activeLiDom)
+}
+
+// 窗口宽度
+function getWindowWidth() {
+    return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+}
+
+// 菜单功能
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// 响应式 小屏幕点击
+function mobilePhone(domCollection) {
+    // 点击事件
+    domCollection.mobilePhoneA.onclick = function (e) {
+        // 阻止跳转
+        e.preventDefault();
+        // 显示菜单 || 关闭菜单
+        if (domCollection.sidebar.classList.contains(showMenuClassName)) {
+            domCollection.sidebar.classList.remove(showMenuClassName)
+        } else {
+            domCollection.sidebar.classList.add(showMenuClassName)
+        }
+    }
+}
+
+// 迷你菜单
+function miniMenu(domCollection) {
+    // 点击事件
+    domCollection.miniMenuA.onclick = function (e) {
+        // 阻止跳转
+        e.preventDefault();
+        // 正常菜单 || 迷你菜单
+        if (domCollection.sidebar.classList.contains(normalMenuClassName)) {
+            // 小菜单
+            domCollection.sidebar.classList.remove(normalMenuClassName);
+            // 修正内容边距
+            document.getElementById(contentIDName).classList.remove(normalMenuClassName);
+        } else {
+            // 完整菜单
+            domCollection.sidebar.classList.add(normalMenuClassName);
+            // 修正内容边距
+            document.getElementById(contentIDName).classList.add(normalMenuClassName);
+        }
+    }
+}
+
+// 选中菜单
+function chooseMenu(domCollection) {
+    // 菜单下所有的A标签
+    let menuA = domCollection.menu.getElementsByTagName("a");
+    // 遍历添加点击事件
+    for (let i = 0; i < menuA.length; i++) {
+        // a标签点击事件
+        menuA[i].onclick = function (e) {
+            // a标签的父li节点
+            let aLiDom = menuA[i].parentNode;
+            // 如果点击的是子菜单，获取上级菜单的 a 标签的html(用处：小屏幕按键显示)
+            let parentADomHTML = [];
+            // 有子菜单
+            let hasChildrenMenu = aLiDom.classList.contains(submenuClassName);
+            // 隐藏其他同级子菜单
+            removeMenuOpen(aLiDom);
+            // 有子菜单 阻止跳转 && 显示子菜单/隐藏子菜单
+            if (hasChildrenMenu) {
+                // 阻止跳转
+                e.preventDefault();
+                // 显示子菜单 || 隐藏子菜单
+                if (aLiDom.classList.contains(showMenuClassName)) {
+                    // 隐藏子菜单
+                    aLiDom.classList.remove(showMenuClassName)
+                } else {
+                    // 显示子菜单
+                    aLiDom.classList.add(showMenuClassName)
+                }
+            } else {
+                // 添加选中效果
+                aLiDom.classList.add(chooseMenuClassName);
+                // 移除选中效果
+                removeMenuChoose(domCollection.menu, aLiDom);
+                // 添加选中效果
+                if (!aLiDom.classList.contains(chooseMenuClassName)) {
+                    aLiDom.classList.add(chooseMenuClassName);
+                }
+                // 添加父菜单选中效果
+                parentADomHTML = addMenuParentChoose(aLiDom)
+            }
+            // 有子菜单：结束
+            if (hasChildrenMenu) {
                 return
             }
-            // 关闭同级的及联菜单
-            liDom.siblings("li").removeClass(showMenuClassName);
-            // 移除其他的选中
-            $(menuNode).find("li").removeClass(chooseMenuClassName);
-            // 选中当前菜单
-            liDom.addClass(chooseMenuClassName);
-            // 小屏幕按键显示
-            // 上级菜单的 a 标签内容
-            let fatherAHtml = [];
-            // 选中当前父菜单
-            let fatherSubmenuDom = liDom.closest(submenuNodeName);
-            while (fatherSubmenuDom.length > 0) {
-                // 上级菜单的 a 标签内容
-                fatherAHtml.push(fatherSubmenuDom.children("a:first-child").html());
-                // 选中父菜单
-                fatherSubmenuDom.addClass(chooseMenuClassName);
-                // 查找上级父菜单
-                fatherSubmenuDom = fatherSubmenuDom.closest('ul').closest(submenuNodeName)
-            }
-            // 修改小屏幕按键显示
-            let mobilePhoneInnerHtml = curDom.html();
-            if (fatherAHtml.length > 0) {
-                mobilePhoneInnerHtml = fatherAHtml.reverse().join("/") + "/" + mobilePhoneInnerHtml
-            }
-            $(mobilePhoneANode).html(mobilePhoneInnerHtml);
-            // 小屏幕选中后关闭菜单
-            if ($(window).width() <= 480) {
-                sidebarDom.removeClass(showMenuClassName);
-            }
             // 小菜单
-            if (sidebarDom.hasClass(normalMenuClassName)){
-                // 小菜单
-                sidebarDom.removeClass(normalMenuClassName);
-                $(contentNode).removeClass(normalMenuClassName);
+            if (domCollection.sidebar.classList.contains(normalMenuClassName)) {
+                // 显示小菜单
+                domCollection.sidebar.classList.remove(normalMenuClassName);
+                // 修正内容边距
+                document.getElementById(contentIDName).classList.remove(normalMenuClassName);
             }
-        })
-    },
-    // 及联菜单
-    associatedMenu: function () {
-        // 及联菜单选择效果
-        $(submenuANode).click(function (e) {
-            e.preventDefault();
-            // 当前及联菜单
-            let submenuLiDom = $(this).closest('li');
-            // 其他同级菜单
-            let otherSubmenuLiDom = submenuLiDom.siblings(submenuNodeName);
-            // 关闭其他同级菜单
-            otherSubmenuLiDom.removeClass(showMenuClassName);
-            // 显示 || 关闭 子菜单
-            if (submenuLiDom.hasClass(showMenuClassName)) {
-                submenuLiDom.removeClass(showMenuClassName);
-            } else {
-                submenuLiDom.addClass(showMenuClassName);
+            // 小屏幕按键显示
+
+            // 修改小屏幕按键显示
+            let mobilePhoneInnerHtml = this.innerHTML;
+            if (parentADomHTML.length > 0) {
+                mobilePhoneInnerHtml = parentADomHTML.reverse().join("/") + "/" + mobilePhoneInnerHtml
             }
-        });
+            domCollection.mobilePhoneA.innerHTML = mobilePhoneInnerHtml;
+            // 小屏幕选中后关闭菜单
+            let width = getWindowWidth();
+            if (width <= 480) {
+                domCollection.sidebar.classList.remove(showMenuClassName);
+            }
+        }
     }
-};
+}
+
+// 菜单功能
+function menuFeatures() {
+    // 初始化节点
+    // 菜单节点
+    const sidebarDom = document.getElementById(sidebarIDName);
+    // 小屏菜单
+    const mobilePhoneADom = sidebarDom.getElementsByClassName(mobilePhoneClassName)[0].getElementsByTagName("a")[0];
+    // 小屏菜单
+    const miniMenuADom = sidebarDom.getElementsByClassName(miniMenuClassName)[0].getElementsByTagName("a")[0];
+    // 菜单节点
+    const menuDom = document.getElementById(menuIDName);
+    // 节点集合
+    const domCollection = {
+        sidebar: sidebarDom,
+        mobilePhoneA: mobilePhoneADom,
+        miniMenuA: miniMenuADom,
+        menu: menuDom,
+    };
+
+    // 响应式 小屏幕点击
+    mobilePhone(domCollection);
+    // 迷你菜单
+    miniMenu(domCollection);
+    // 选中菜单
+    chooseMenu(domCollection);
+    // 刷新页面后，菜单选中
+    refreshMenu(domCollection);
+}
 
 // 输出菜单功能
-export default sidebarMenuFeatures
+export {
+    menuFeatures as sidebarMenuFeatures
+}

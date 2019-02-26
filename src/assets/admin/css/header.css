@@ -1,7 +1,12 @@
 /* header */
 
 #admin-header {
-    background: url("../../logo-admin.png") no-repeat #1f262d scroll;
+    background: url("../img/logo-admin.png") no-repeat scroll #1f262d !important;
+}
+
+#admin-header-nav {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
 }
 
 #admin-header .admin-header-toggle {
@@ -9,6 +14,7 @@
 }
 
 #admin-header .admin-header-logo {
+    color: #ffffff;
     padding-left: 200px;
 }
 
@@ -22,12 +28,21 @@
     background-color: transparent !important;
 }
 
+#admin-header ul li {
+    padding-right: 0.5rem;
+}
+
 #admin-header ul li > a {
+    padding: 0.5rem 0;
     color: rgba(255, 255, 255, 0.5);
 }
 
 #admin-header ul li .disabled {
     color: rgba(255, 255, 255, 0.25);
+}
+
+#admin-header ul li span {
+    margin-left: 2px;
 }
 
 @media (max-width: 980px) {

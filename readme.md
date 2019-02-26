@@ -1,6 +1,6 @@
 # bootstrap-vue-admin
 
-bootstrap-vue-admin : admin management system template based on vue + bootstrap-vue + vue-router + jquery
+bootstrap-vue-admin : admin management system template based on vue + bootstrap-vue + vue-router
 
 ## install && run
 
@@ -38,7 +38,7 @@ sudo npm install -g @vue/cli-init
 
 ## live dome
 
-https://ggguang.github.io
+https://ggguang.github.io/#/admin/dashboard
 
 ```text
 
@@ -76,6 +76,10 @@ Password : password
 > login
 
 ![login.png](public/readme/login.png)
+
+> web
+
+![web.png](public/readme/web.png)
 
 ## License
 

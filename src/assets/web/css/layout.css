@@ -1,0 +1,21 @@
+html, body {
+    height: 100%
+}
+
+body {
+    background: #2E363F !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* layout */
+
+#app {
+    height: 100%;
+}
+
+#web-layout {
+    height: 100%;
+}

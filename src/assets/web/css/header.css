@@ -1,0 +1,27 @@
+#web-header {
+    border-top: 10px solid #d93e39;
+    background: none repeat scroll #f2f2f2;
+}
+
+#web-header .web-header-logo img {
+    height: 25px;
+    width: 25px;
+    border-radius: 500rem;
+}
+
+#web-header ul li {
+    padding-right: 0.5rem;
+}
+
+#web-header ul li > a {
+    color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 0;
+}
+
+#web-header ul li .disabled {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+#web-header ul li span {
+    margin-left: 2px;
+}

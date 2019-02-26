@@ -2,17 +2,17 @@
     <div id="login-box">
 
         <div class="login-box-logo">
-            <h3><img src="../assets/logo-login.png" alt="Logo"/></h3>
+            <h3><img src="../assets/admin/img/logo-login.png" alt="Logo"/></h3>
         </div>
 
         <!--login form-->
         <template v-if="showLoginForm">
-            <LoginForm :toRecoverForm="toRecoverForm"></LoginForm>
+            <AdminLoginForm :toRecoverForm="toRecoverForm"></AdminLoginForm>
         </template>
 
         <!--recover form-->
         <template v-if="showRecoverForm">
-            <RecoverForm :toLoginForm="toLoginForm"></RecoverForm>
+            <AdminRecoverForm :toLoginForm="toLoginForm"></AdminRecoverForm>
         </template>
 
     </div>
@@ -23,12 +23,13 @@
 </style>
 
 <script>
-    import LoginForm from "./login/LoginForm";
-    import RecoverForm from "./login/RecoverForm";
+    import AdminLoginForm from "./login/LoginForm.vue";
+    import AdminRecoverForm from "./login/RecoverForm.vue";
 
     export default {
+        name: "AdminLogin",
         // 模板
-        components: {LoginForm, RecoverForm},
+        components: {AdminLoginForm, AdminRecoverForm},
         // 数据
         data() {
             return {

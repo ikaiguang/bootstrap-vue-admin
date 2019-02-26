@@ -1,0 +1,15 @@
+/* footer */
+#web-footer {
+    border-top: 10px solid #d93e39;
+    width: 100%;
+}
+
+#web-footer-information {
+    background-color: #2E363F;
+}
+
+#web-footer-copyright {
+    background-color: #2E363F;
+    text-align: center;
+    color: #666;
+}

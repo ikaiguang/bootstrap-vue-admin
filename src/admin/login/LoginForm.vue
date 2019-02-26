@@ -1,15 +1,15 @@
 <template>
     <b-form id="login-form" @submit="onSubmitLogin">
 
-        <b-form-group id="login-input-group-username"
+        <b-form-group id="login-input-group-account"
                       horizontal
                       :label-cols="4"
-                      label='Username:'
-                      label-for="login-input-username">
-            <b-form-input id="login-input-username"
+                      label='Account:'
+                      label-for="login-input-account">
+            <b-form-input id="login-input-account"
                           type="text"
                           required
-                          v-model="loginFormData.username"
+                          v-model="loginFormData.account"
                           placeholder="手机号码 / 电子邮箱 / 用户名">
             </b-form-input>
         </b-form-group>
@@ -80,7 +80,7 @@
 
     export default {
         // 模板名
-        name: "LoginForm",
+        name: "AdminLoginForm",
         props: {
             // 显示恢复表单
             toRecoverForm: Function
@@ -89,7 +89,7 @@
             return {
                 // 登陆表单
                 loginFormData: {
-                    username: 'ikaiguang@github.com',
+                    account: 'ikaiguang@github.com',
                     password: 'password',
                     code: '',
                     remember: [''],
@@ -107,12 +107,12 @@
             onSubmitLogin(evt) {
                 evt.preventDefault();
                 // alert(JSON.stringify(this.loginFormData));
-                auth.login(this.loginFormData.username, this.loginFormData.password, loggedIn => {
+                auth.login(this.loginFormData.account, this.loginFormData.password, loggedIn => {
                     if (!loggedIn) {
                         this.loginFormErrorAlert.dismissCountDown = 3;
                         this.loginFormErrorAlert.errorMessage = "登陆失败"
                     } else {
-                        this.$router.replace(this.$route.query.redirect || '/')
+                        this.$router.replace(this.$route.query.redirect || '/admin')
                     }
                 })
             },

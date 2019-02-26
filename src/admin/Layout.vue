@@ -22,7 +22,8 @@
     @import "./../assets/admin/css/sidebar.css";
     @import "./../assets/admin/css/content.css";
     @import "./../assets/admin/css/footer.css";
-    @import "./../assets/admin/css/icon.css";
+    @import "./../assets/widget/css/widget.css";
+    @import "./../assets/icon/css/icon.css";
 </style>
 
 <script>
@@ -33,6 +34,7 @@
     import AdminLayoutFooter from "./layout/Footer.vue";
 
     export default {
+        name: "AdminLayout",
         components: {
             'AdminLayoutHeader': AdminLayoutHeader,
             'AdminLayoutSidebar': AdminLayoutSidebar,

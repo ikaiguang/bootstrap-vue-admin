@@ -28,7 +28,7 @@ const children = [
 
 // export
 export {
-    layout as adminLayout,
+    layout as adminLayoutRouter,
     dashboard as adminDashboardRouter,
     children as adminChildrenRouter,
 }

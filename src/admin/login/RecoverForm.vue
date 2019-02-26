@@ -47,7 +47,7 @@
 <script>
     export default {
         // 模板名
-        name: "RecoverForm",
+        name: "AdminRecoverForm",
         props: {
             toLoginForm: Function,
         },

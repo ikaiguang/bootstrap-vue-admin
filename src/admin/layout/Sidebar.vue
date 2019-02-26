@@ -14,7 +14,7 @@
             <a href="#">&nbsp;</a>
         </div>
 
-        <b-nav vertical>
+        <b-nav vertical id="admin-sidebar-menu">
 
             <b-nav-text tag="li" :class="{active:this.$route.path==='/admin/dashboard'}">
                 <router-link to="/admin/dashboard">
@@ -111,14 +111,14 @@
 </template>
 
 <script>
-    import sidebar from '../../assets/admin/js/sidebar'
+    import {sidebarMenuFeatures} from '../../assets/admin/js/sidebar'
 
     export default {
         data() {
             return {}
         },
         mounted() {
-            sidebar.menuFeatures()
+            sidebarMenuFeatures()
         },
         methods: {}
     }
