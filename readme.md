@@ -2,6 +2,8 @@
 
 bootstrap-vue-admin : admin management system template based on vue + bootstrap-vue + vue-router
 
+> [live-dome](http://bootstrap-vue-admin.uufff.com/#/admin/dashboard)
+
 ## install && run
 
 ```base
