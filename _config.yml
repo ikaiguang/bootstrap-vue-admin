@@ -1,1 +1,2 @@
-baseurl: "/dist" # the subpath of your site, e.g. /dist
+url: http://ikaiguang.gitee.io/bootstrap-vue-admin
+root: /dist
