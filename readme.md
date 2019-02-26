@@ -38,7 +38,7 @@ sudo npm install -g @vue/cli-init
 
 ## live dome
 
-https://ggguang.github.io/#/admin/dashboard
+http://bootstrap-vue-admin.uufff.com/#/admin/dashboard
 
 ```text
 
