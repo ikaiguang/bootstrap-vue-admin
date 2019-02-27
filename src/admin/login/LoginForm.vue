@@ -2,7 +2,7 @@
     <b-form id="login-form" @submit="onSubmitLogin">
 
         <b-form-group id="login-input-group-account"
-                      horizontal
+                      inline
                       :label-cols="4"
                       label='Account:'
                       label-for="login-input-account">
@@ -15,7 +15,7 @@
         </b-form-group>
 
         <b-form-group id="login-input-group-password"
-                      horizontal
+                      inline
                       :label-cols="4"
                       label="Password:"
                       label-for="login-input-password">
@@ -28,7 +28,7 @@
         </b-form-group>
 
         <b-form-group id="login-input-group-code"
-                      horizontal
+                      inline
                       :label-cols="4"
                       label="Code:"
                       label-for="login-input-code">
@@ -40,7 +40,7 @@
         </b-form-group>
 
         <b-form-group id="login-input-group-remember"
-                      horizontal
+                      inline
                       :label-cols="4"
                       label="Remember:"
                       label-for="login-input-remember">
@@ -72,6 +72,10 @@
             </span>
         </b-form-group>
 
+        <b-form-group>
+            <p class="normal_text"><a @click="toRegisterForm">没有账号？注册</a></p>
+        </b-form-group>
+
     </b-form>
 </template>
 
@@ -83,7 +87,9 @@
         name: "AdminLoginForm",
         props: {
             // 显示恢复表单
-            toRecoverForm: Function
+            toRecoverForm: Function,
+            // 显示注册表单
+            toRegisterForm: Function,
         },
         data() {
             return {

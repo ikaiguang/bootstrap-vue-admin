@@ -7,7 +7,12 @@
 
         <!--login form-->
         <template v-if="showLoginForm">
-            <AdminLoginForm :toRecoverForm="toRecoverForm"></AdminLoginForm>
+            <AdminLoginForm :toRecoverForm="toRecoverForm" :toRegisterForm="toRegisterForm"></AdminLoginForm>
+        </template>
+
+        <!--register form-->
+        <template v-if="showRegisterForm">
+            <AdminRegisterForm :toLoginForm="toLoginForm"></AdminRegisterForm>
         </template>
 
         <!--recover form-->
@@ -24,32 +29,43 @@
 
 <script>
     import AdminLoginForm from "./login/LoginForm.vue";
+    import AdminRegisterForm from "./login/RegisterForm.vue";
     import AdminRecoverForm from "./login/RecoverForm.vue";
 
     export default {
         name: "AdminLogin",
         // 模板
-        components: {AdminLoginForm, AdminRecoverForm},
+        components: {AdminLoginForm, AdminRegisterForm, AdminRecoverForm},
         // 数据
         data() {
             return {
                 // 显示登陆表单
                 showLoginForm: true,
+                // 显示注册表单
+                showRegisterForm: false,
                 // 显示恢复表单
                 showRecoverForm: false,
             }
         },
         methods: {
-            // 显示恢复表单
-            toRecoverForm() {
-                this.showLoginForm = !this.showLoginForm;
-                this.showRecoverForm = !this.showRecoverForm;
-            },
             // 显示登陆表单
             toLoginForm() {
-                this.showLoginForm = !this.showLoginForm;
-                this.showRecoverForm = !this.showRecoverForm;
-            }
+                this.showLoginForm = true;
+                this.showRegisterForm = false;
+                this.showRecoverForm = false;
+            },
+            // 显示注册表单
+            toRegisterForm() {
+                this.showRegisterForm = true;
+                this.showLoginForm = false;
+                this.showRecoverForm = false;
+            },
+            // 显示恢复表单
+            toRecoverForm() {
+                this.showRecoverForm = true;
+                this.showLoginForm = false;
+                this.showRegisterForm = false;
+            },
         }
     }
 </script>
