@@ -34,6 +34,12 @@
                 </router-link>
             </b-nav-text>
 
+            <b-nav-text tag="li" :class="{active:this.$route.path==='/admin/timeline'}">
+                <router-link to="/admin/timeline">
+                    <i class="icon icon-time"></i><span>Timeline</span>
+                </router-link>
+            </b-nav-text>
+
             <b-nav-text tag="li" class="submenu">
 
                 <a href="#"><i class="icon icon-inbox"></i><span>二级菜单</span></a>
