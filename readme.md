@@ -4,6 +4,10 @@ bootstrap-vue-admin : admin management system template based on vue + bootstrap-
 
 > [live-dome](http://bootstrap-vue-admin.uufff.com/#/admin/dashboard)
 
+## depend on @vue/cli
+
+install : `npm install -g @vue/cli`
+
 ## install && run
 
 ```base
@@ -16,20 +20,6 @@ npm install
 
 # vue cli v3
 npm run serve
-
-```
-
-## 开发环境
-
-vue-cli version 3.2.3
-
-```bash
-
-# cli v3
-sudo npm install -g @vue/cli
-
-# cli v2
-sudo npm install -g @vue/cli-init
 
 ```
 

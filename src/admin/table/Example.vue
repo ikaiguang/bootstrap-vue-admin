@@ -27,12 +27,12 @@
 </template>
 
 <script>
-    const fields = {
-        username: {label: '用户名', sortable: true},
-        age: {label: '年龄', sortable: true},
-        email: {label: '电子邮箱', sortable: false},
-        register_date: {label: '注册时间', sortable: true},
-    };
+    const fields = [
+        {key:"username", label:"用户名", sortable: true},
+        {key:"age", label:"年龄", sortable: true},
+        {key:"email", label:"电子邮箱", sortable: false},
+        {key:"register_date", label:"注册时间", sortable: true},
+    ];
     const items = [
         {username: "张三", age: 15, email: 'zhangsan@admin.com', register_date: "2019-01-01"},
         {username: "李四", age: 25, email: 'lisi@admin.com', register_date: "2019-01-02"},
