@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.16.0",
-    "vue": "^2.6.11",
-    "vue-router": "^3.3.4"
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.1",
@@ -19,7 +19,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,
