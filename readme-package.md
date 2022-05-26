@@ -4,8 +4,8 @@
 
 # 更新包
 
-npm update bootstrap-vue
-npm update vue
-npm update vue-router
+npm install bootstrap-vue vue vue-router
+npm update bootstrap-vue vue vue-router
+npm update
 
 ```
