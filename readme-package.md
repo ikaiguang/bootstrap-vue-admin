@@ -10,8 +10,5 @@ npm update
 npm update -g @vue/cli
 npm outdated
 vue outdated
-vue upgrade @vue/cli-service
-vue upgrade @vue/cli-plugin-babel
-vue upgrade @vue/cli-plugin-eslint
 
 ```
