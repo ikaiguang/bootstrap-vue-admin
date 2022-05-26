@@ -1,21 +1,22 @@
-html, body {
-    height: 100%
+html,
+body {
+  height: 100%;
 }
 
 body {
-    background: #2E363F !important;
+  background: #2e363f !important;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* layout */
 
 #app {
-    height: 100%;
+  height: 100%;
 }
 
 #web-layout {
-    height: 100%;
+  height: 100%;
 }

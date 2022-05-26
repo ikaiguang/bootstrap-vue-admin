@@ -1,63 +1,61 @@
-
-
 /* widget-box */
 
 .widget-box {
-    background: none repeat scroll 0 0 #F9F9F9;
-    border-left: 1px solid #CDCDCD;
-    border-top: 1px solid #CDCDCD;
-    border-right: 1px solid #CDCDCD;
-    clear: both;
-    margin-top: 16px;
-    margin-bottom: 8px;
+  background: none repeat scroll 0 0 #f9f9f9;
+  border-left: 1px solid #cdcdcd;
+  border-top: 1px solid #cdcdcd;
+  border-right: 1px solid #cdcdcd;
+  clear: both;
+  margin-top: 16px;
+  margin-bottom: 8px;
 }
 
 .widget-title {
-    background: #efefef;
-    border-bottom: 1px solid #CDCDCD;
-    height: 36px;
+  background: #efefef;
+  border-bottom: 1px solid #cdcdcd;
+  height: 36px;
 }
 
 .widget-title span.icon {
-    padding: 6px 10px 6px 11px;
-    float: left;
-    border-right: 1px solid #dadada;
+  padding: 6px 10px 6px 11px;
+  float: left;
+  border-right: 1px solid #dadada;
 }
 
 .widget-title h5 {
-    color: #666;
-    float: left;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px;
-    line-height: 12px;
-    margin: 0;
+  color: #666;
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px;
+  line-height: 12px;
+  margin: 0;
 }
 
 .widget-title .label {
-    display: inline-block;
-    float: right;
-    padding: 0.3rem 1rem 0 0;
-    margin: 0;
+  display: inline-block;
+  float: right;
+  padding: 0.3rem 1rem 0 0;
+  margin: 0;
 }
 
 .widget-content {
-    padding: 15px;
-    border-bottom: 1px solid #cdcdcd;
+  padding: 15px;
+  border-bottom: 1px solid #cdcdcd;
 }
 
 .no-padding {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 /* media */
 
 @media (max-width: 970px) {
-    .widget-title {
-        overflow: hidden !important;
-    }
+  .widget-title {
+    overflow: hidden !important;
+  }
 
-    .widget-title .label {
-        float: left;
-    }
+  .widget-title .label {
+    float: left;
+  }
 }

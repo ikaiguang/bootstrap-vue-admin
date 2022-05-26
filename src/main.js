@@ -7,13 +7,13 @@ import App from "./App.vue";
 import router from "./routers/router.js";
 
 // bootstrap-vue
-import BootstrapVue from 'bootstrap-vue'
+import BootstrapVue from "bootstrap-vue";
 
 Vue.use(BootstrapVue);
 
 // bootstrap-vue css
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
 // vue config
 Vue.config.productionTip = false; // 设置为 false 以阻止 vue 在启动时生成生产提示。(默认值：true)
@@ -22,6 +22,6 @@ Vue.config.productionTip = false; // 设置为 false 以阻止 vue 在启动时�
 
 // render
 new Vue({
-    router,
-    render: h => h(App)
+  router,
+  render: h => h(App)
 }).$mount("#app");

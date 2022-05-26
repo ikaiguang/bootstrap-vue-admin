@@ -2,13 +2,10 @@
 import WebLayout from "./../../web/Layout.vue";
 
 // web 布局
-const layout = {path: "/", name: "web", component: WebLayout};
+const layout = { path: "/", name: "web", component: WebLayout };
 
 // web 主页
 const dashboard = layout;
 
 // export
-export {
-    layout as webLayoutRouter,
-    dashboard as webDashboardRouter,
-}
+export { layout as webLayoutRouter, dashboard as webDashboardRouter };
