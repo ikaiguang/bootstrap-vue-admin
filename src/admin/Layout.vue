@@ -1,16 +1,16 @@
 <template>
   <div id="admin-layout">
     <!-- admin header -->
-    <AdminLayoutHeader />
+    <AdminLayoutHeader/>
 
     <!-- admin sidebar-->
-    <AdminLayoutSidebar />
+    <AdminLayoutSidebar/>
 
     <!-- admin content-->
-    <AdminLayoutContent />
+    <AdminLayoutContent/>
 
     <!-- admin footer-->
-    <AdminLayoutFooter />
+    <AdminLayoutFooter/>
   </div>
 </template>
 
@@ -22,6 +22,7 @@
 @import "./../assets/admin/css/footer.css";
 @import "./../assets/widget/css/widget.css";
 @import "./../assets/icon/css/icon.css";
+@import "./../assets/table/css/table.css";
 </style>
 
 <script>

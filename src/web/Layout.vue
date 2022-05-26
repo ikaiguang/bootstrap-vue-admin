@@ -18,6 +18,7 @@
 @import "./../assets/web/css/footer.css";
 @import "./../assets/widget/css/widget.css";
 @import "./../assets/icon/css/icon.css";
+@import "./../assets/table/css/table.css";
 </style>
 
 <script>

@@ -1,0 +1,20 @@
+/* table */
+
+.i-table-pagination {
+    /*line-height: 16px;*/
+    margin-top: 5px;
+}
+
+.i-table-pagination li button,
+.i-table-pagination li span,
+.i-table-pagination li a{
+    border-color: #dddddd #dddddd #cccccc; /* for IE < 9 */
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #333333;
+}
+
+.i-table-pagination li.disabled span,
+.i-table-pagination li.disabled button,
+.i-table-pagination li.disabled a {
+    color: #AAAAAA !important;
+}
