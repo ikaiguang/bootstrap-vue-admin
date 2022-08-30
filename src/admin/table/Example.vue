@@ -28,6 +28,7 @@
                 v-model="currentPage"
                 :total-rows="totalRows"
                 :per-page="perPage"
+                align="right"
                 aria-controls="table-with-pagination"
                 first-text="First"
                 prev-text="Prev"

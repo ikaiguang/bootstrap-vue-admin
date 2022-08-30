@@ -1,14 +1,13 @@
 # node-package
 
+参考文档 : [npm 更新依赖包](https://juejin.cn/post/6913833065647341581)
+
 ```shell script
 
-# 更新包
-
-npm install bootstrap-vue vue vue-router
-npm update bootstrap-vue vue vue-router
-npm update
-npm update -g @vue/cli
+# 首先：检查更新包
 npm outdated
-vue outdated
+# 然后：手动更新`package.json`
+# 最后：安装包
+npm install
 
 ```
